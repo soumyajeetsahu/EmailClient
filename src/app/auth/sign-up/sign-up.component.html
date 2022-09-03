@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Create an Account</h3>
+  <form [formGroup]="authForm">
+    <mat-card class="signup">
+      <app-input
+        label="username"
+        [control]="authForm.get('username')"
+        inputType="text"
+      ></app-input>
+      <app-input
+        label="Password"
+        [control]="authForm.get('password')"
+        inputType="password"
+      ></app-input>
+      <app-input
+        label="Confirm Password"
+        [control]="authForm.get('passwordConfirmation')"
+        inputType="password"
+      ></app-input>
+
+      <div
+        *ngIf="
+          authForm.get('password')?.touched &&
+          authForm.get('passwordConfirmation')?.touched &&
+          authForm.errors
+        "
+        class="ui red basic label"
+      >
+        <p *ngIf="authForm.hasError('passwordsNotMatching')">
+          Password and Confirm Password must match!!
+        </p>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" class="formField">
+          Submit
+        </button>
+      </div>
+    </mat-card>
+  </form>
+</div>

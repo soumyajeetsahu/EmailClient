@@ -1,0 +1,17 @@
+<div>
+  <mat-form-field appearance="outline" class="formField">
+    <input [type]="inputType" matInput [placeholder]="label" [formControl]="control" />
+    <mat-error *ngIf="control.hasError('required')">
+      {{label}} is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="control.hasError('invalidUsername')">
+        {{label}} already exist. Please enter a different username. 
+      </mat-error>
+      <mat-error *ngIf="control.hasError('minlength')">
+        Minimum required length is 3.
+      </mat-error>
+      <mat-error *ngIf="control.hasError('maxlength')">
+        Minimum required length is 20.
+      </mat-error>
+  </mat-form-field>
+</div>
