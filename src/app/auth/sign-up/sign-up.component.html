@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Create an Account</h3>
-  <form [formGroup]="authForm">
+  <form (ngSubmit)="OnFormSubmit()" [formGroup]="authForm">
     <mat-card class="signup">
       <app-input
         label="username"
@@ -28,6 +28,9 @@
       >
         <p *ngIf="authForm.hasError('passwordsNotMatching')">
           Password and Confirm Password must match!!
+        </p>
+        <p *ngIf="authForm.hasError('UnknwonError')">
+          Signup failed with unknown error. Please try again. 
         </p>
       </div>
       <div>

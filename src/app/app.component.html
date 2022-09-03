@@ -1,1 +1,29 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>
+    <span routerLink="/" mat-button>Email Client</span>
+  </div>
+  <div>
+    <span>
+      <a mat-button routerLink="/inbox" routerLinkActive="active"> Inbox </a>
+    </span>
+    <span>
+      <a
+        mat-raised-button
+        color="accent"
+        routerLink="/signup"
+        routerLinkActive="active"
+      >
+        Sign Up
+      </a>
+    </span>
+    <span>
+      <a mat-button routerLink="/" routerLinkActive="active"> Login </a>
+    </span>
+    <span>
+      <a mat-raised-button color="accent" routerLink="/signout" routerLinkActive="active">
+        Sign Out
+      </a>
+    </span>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>
