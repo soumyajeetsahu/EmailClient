@@ -9,7 +9,6 @@ export class MatchPassword implements Validator {
     if (password === passwordConfirmation) {
       return null;
     } else {
-      console.log("password match")
       return { passwordsNotMatching: true };
     }
   }

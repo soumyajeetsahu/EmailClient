@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Create an Account</h3>
-  <form (ngSubmit)="OnFormSubmit()" [formGroup]="authForm">
+  <form (ngSubmit)="OnFormSubmit(authform)" #authform="ngForm" [formGroup]="authForm">
     <mat-card class="signup">
       <app-input
         label="username"
@@ -40,4 +40,7 @@
       </div>
     </mat-card>
   </form>
+  <span style="margin-top:1em"> Already have a account ? <a href="" routerLink="/">Login</a></span>
 </div>
+
+
